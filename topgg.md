@@ -28,26 +28,25 @@ Kurisu also enhances your Karuta experience by providing the following features:
 
 **Max Effort Calculator**
 
-![effortCalculator](https://i.imgur.com/6Up9Ah1.png)
+<img src="https://imgur.com/ixB0034.png" width="400px"/>
 
 **Uninjured Effort Calculator**
 
-![uninjuredEffortCalculator](https://i.imgur.com/3PUkqF9.png)
+<img src="https://imgur.com/OteEgX8.png" width="400px"/>
 
 **Server Drop Notifier**
 Kurisu will ping you upon a drop due to server activity. \
 Use `serverdropadd` and `serverdropremove` depending on whether you wish to be pinged. \
 **Note: this feature is server-specific.*
 
-![serverDrop](https://i.imgur.com/wwoTKf4.png)
+<img src="https://imgur.com/NIOx9LV.png" width="400px"/>
 
 **Pog Drop System** \
 To record a **pog drop**, react to the drop message with '⭐' . \
-Kurisu will look for a text-channel named **'pog-drops'** to record the drop in. \
+Kurisu will look for a text-channel named **'pog-drops'** to record the drop in.
 
-![pogDrop1](https://i.imgur.com/Jk5j3O8.png)
-
-![pogDrop2](https://i.imgur.com/rL4ZXwq.png)
+<img src="https://imgur.com/Y4PoVyz.png" width="500px"/>
+<img src="https://imgur.com/ooLoqgn.png" width="500px"/>
 
 ## Ascii Art
 
@@ -60,3 +59,5 @@ Kurisu will look for a text-channel named **'pog-drops'** to record the drop in.
 ## Misc
 
 `pfp` `flip` `roll`
+
+For more information, check out the [Kurisu Wiki](https://github.com/eyang2020/Kurisu/wiki)
