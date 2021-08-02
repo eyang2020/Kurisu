@@ -14,3 +14,9 @@ Kurisu is a multipurpose Discord bot made for fun, written in Python 3, using th
 To see all features, check the [full command reference](https://github.com/eyang2020/Kurisu/wiki/Commands) for all the commands!
 
 Visit the [wiki](https://github.com/eyang2020/Kurisu/wiki) for more information.
+
+## Contributing
+Thank you for considering contributing to Kurisu!
+
+## License
+Kurisu is open-sourced software licensed under the [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl.html).
