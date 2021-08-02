@@ -27,21 +27,26 @@ Kurisu also enhances your Karuta experience by providing the following features:
 * **Pog Drop System**
 
 **Max Effort Calculator**
+
 ![effortCalculator](https://i.imgur.com/6Up9Ah1.png)
 
 **Uninjured Effort Calculator**
+
 ![uninjuredEffortCalculator](https://i.imgur.com/3PUkqF9.png)
 
 **Server Drop Notifier**
 Kurisu will ping you upon a drop due to server activity. \
 Use `serverdropadd` and `serverdropremove` depending on whether you wish to be pinged. \
 **Note: this feature is server-specific.*
+
 ![serverDrop](https://i.imgur.com/wwoTKf4.png)
 
 **Pog Drop System** \
 To record a **pog drop**, react to the drop message with '⭐' . \
 Kurisu will look for a text-channel named **'pog-drops'** to record the drop in. \
+
 ![pogDrop1](https://i.imgur.com/Jk5j3O8.png)
+
 ![pogDrop2](https://i.imgur.com/rL4ZXwq.png)
 
 ## Ascii Art
