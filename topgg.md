@@ -46,6 +46,7 @@ To record a **pog drop**, react to the drop message with '⭐' . \
 Kurisu will look for a text-channel named **'pog-drops'** to record the drop in.
 
 <img src="https://imgur.com/Y4PoVyz.png" width="500px"/>
+<br/><br/>
 <img src="https://imgur.com/ooLoqgn.png" width="500px"/>
 
 ## Ascii Art
