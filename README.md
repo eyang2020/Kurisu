@@ -4,8 +4,8 @@
 Kurisu is a multipurpose Discord bot made for fun, written in Python 3, using the discord.py library.
 
 ## Main features
-* Play a gane of BlackJack with Kurisu 
-* Access to anime databases through AniList & MyAnimeList
+* Play a game of BlackJack with Kurisu 
+* Access anime databases through AniList & MyAnimeList
 * Lookup osu! statistics for any user
 * Get a random anime meme from Reddit
 * Enhance Karuta gameplay with multiple plugins
