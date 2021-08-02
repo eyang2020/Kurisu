@@ -39,7 +39,7 @@ Kurisu will ping you upon a drop due to server activity. \
 Use `serverdropadd` and `serverdropremove` depending on whether you wish to be pinged. \
 **Note: this feature is server-specific.*
 
-<img src="https://imgur.com/NIOx9LV.png" width="400px"/>
+<img src="https://imgur.com/NIOx9LV.png" width="500px"/>
 
 **Pog Drop System** \
 To record a **pog drop**, react to the drop message with '⭐' . \
