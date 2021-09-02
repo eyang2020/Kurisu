@@ -1,6 +1,13 @@
+import os
+import pymongo
 import discord
 from discord.ext import commands
 from discord.ext import menus
+
+MONGODB_AUTH = os.environ['MONGODB_AUTH']
+cluster = pymongo.MongoClient(MONGODB_AUTH)
+db = cluster.test
+collection = db['CalcMode']
 
 # a class representing the embed the user interacts with
 class EffortMenu(menus.Menu):
@@ -116,6 +123,11 @@ class EffortMenu(menus.Menu):
             await self.message.edit(embed=embed)
 
 class EffortCalc(commands.Cog):
+
+    # channelCache: cache for the channels that have calc mode disabled.
+    # format: {channelId : mode}, mode=0->off, mode=1->on
+    channelCache = {}
+
     def __init__(self, client):
         self.client = client
         self.cd_mapping = commands.CooldownMapping.from_cooldown(1, 5, commands.BucketType.user)
@@ -133,7 +145,21 @@ class EffortCalc(commands.Cog):
             if content.split()[0].lower() == 'kwi':
                 user = message.author
                 channel = message.channel
-                # valid message, now check cooldowns
+                channelId = channel.id
+                # check if this channel has calc mode enabled
+                # first check cache. if cache empty, check database and update cache.
+                if channelId in self.channelCache:
+                    if self.channelCache[channelId] == 0:
+                        return
+                else:
+                    serverId = message.guild.id
+                    doc = collection.find_one({'serverId' : serverId})
+                    if doc is None or channelId not in doc['channelId']:
+                        self.channelCache[channelId] = 1
+                    else:
+                        self.channelCache[channelId] = 0
+                        return
+                # valid message and calc mode is enabled, now check cooldowns
                 bucket = self.cd_mapping.get_bucket(message)
                 retry_after = bucket.update_rate_limit()
                 # not on cd
@@ -192,6 +218,28 @@ class EffortCalc(commands.Cog):
         except Exception as e2:
             #print(f'Invalid message error: {e2}')
             pass
+
+    # Commands
+    @commands.command()
+    @commands.cooldown(1, 3, commands.BucketType.user)
+    async def calcmode(self, ctx):
+        user = ctx.message.author
+        # check user permissions
+        if not user.guild_permissions.administrator:
+            await ctx.send(f'{user.mention}, you do not have permission to use that command.')
+            return
+        channel = ctx.message.channel
+        channelId = channel.id
+        serverId = ctx.message.guild.id
+        doc = collection.find_one({'serverId' : serverId})
+        if doc is None or channelId not in doc['channelId']:
+            collection.update_one({'serverId': serverId}, {'$addToSet': {'channelId': channelId}}, upsert=True)
+            self.channelCache[channelId] = 0
+            await ctx.send(f'{user.mention}, calc mode has been `disabled` in {channel.mention}.')
+        else:
+            collection.update_one({'serverId': serverId}, {'$pull': {'channelId': channelId}})
+            self.channelCache[channelId] = 1
+            await ctx.send(f'{user.mention}, calc mode has been `enabled` in {channel.mention}.')
 
 def setup(client):
     client.add_cog(EffortCalc(client))
