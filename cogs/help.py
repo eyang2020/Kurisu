@@ -173,6 +173,11 @@ class Help(commands.Cog):
                 Get a link to invite me to your server.
                 '''
                 embed.add_field(name='\u2800', value=descriptionStr, inline=False)
+            elif com == 'support':
+                descriptionStr = '''
+                Get an invitation to join Kurisu's support server.
+                '''
+                embed.add_field(name='\u2800', value=descriptionStr, inline=False)
             else:
                 # command does not exist
                 await ctx.send(f'{ctx.message.author.mention}, the chosen command does not exist.')
@@ -206,7 +211,7 @@ class Help(commands.Cog):
             )
             embed.add_field(name='<:osu:837390866192007218> osu!', value='`osu`\n`setprofile`', inline=True)
             embed.add_field(name='🎴 Karuta', value='`stats`\n`serverdropadd`\n`serverdropremove`', inline=True)
-            embed.add_field(name='💮 Misc.', value='`pfp`, `flip`, `roll`\n`invite`', inline=True)
+            embed.add_field(name='💮 Misc.', value='`pfp`, `flip`, `roll`\n`invite`, `support`', inline=True)
             await ctx.send(embed=embed)
 
 def setup(client):
