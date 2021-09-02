@@ -168,6 +168,11 @@ class Help(commands.Cog):
                 Roll a die and get a number from **1-6**.
                 '''
                 embed.add_field(name='\u2800', value=descriptionStr, inline=False)
+            elif com == 'invite':
+                descriptionStr = '''
+                Get a link to invite me to your server.
+                '''
+                embed.add_field(name='\u2800', value=descriptionStr, inline=False)
             else:
                 # command does not exist
                 await ctx.send(f'{ctx.message.author.mention}, the chosen command does not exist.')
@@ -201,7 +206,7 @@ class Help(commands.Cog):
             )
             embed.add_field(name='<:osu:837390866192007218> osu!', value='`osu`\n`setprofile`', inline=True)
             embed.add_field(name='🎴 Karuta', value='`stats`\n`serverdropadd`\n`serverdropremove`', inline=True)
-            embed.add_field(name='💮 Misc.', value='`pfp`\n`flip`\n`roll`', inline=True)
+            embed.add_field(name='💮 Misc.', value='`pfp`, `flip`, `roll`\n`invite`', inline=True)
             await ctx.send(embed=embed)
 
 def setup(client):
