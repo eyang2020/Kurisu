@@ -40,5 +40,10 @@ class Misc(commands.Cog):
     async def invite(self, ctx):
         await ctx.send('You can invite me to your server here! https://discord.com/oauth2/authorize?client_id=821852263894089788&permissions=347200&scope=bot')
 
+    @commands.command()
+    @commands.cooldown(1, 3, commands.BucketType.user)
+    async def support(self, ctx):
+        await ctx.send('https://discord.com/invite/ud2nxbeEBg')
+
 def setup(client):
     client.add_cog(Misc(client))
