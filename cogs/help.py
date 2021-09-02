@@ -151,6 +151,14 @@ class Help(commands.Cog):
                 '''
                 embed.add_field(name='Shortcuts', value='`s`', inline=False)
                 embed.add_field(name='\u2800', value=descriptionStr, inline=False)
+            elif com == 'calcmode':
+                descriptionStr = '''
+                Toggle the effort calculator on or off in your current channel.
+                When disabled, Kurisu will not provide effort calculations on k!workerinfo.
+                'calc mode' is enabled by default in all channels.
+                You must be an administrator in the current server to use this command.
+                '''
+                embed.add_field(name='\u2800', value=descriptionStr, inline=False)
             elif com == 'pfp':
                 descriptionStr = '''
                 Get the profile picture of `user`.
@@ -185,7 +193,7 @@ class Help(commands.Cog):
             await ctx.send(embed=embed)
         else:
             embed=discord.Embed(
-                title='**KurisuBot Commands**',
+                title='**Kurisu Commands**',
                 description='Use `k*help [command]` for more information on a specific command.', 
                 color=0xff0000
             )
@@ -210,7 +218,7 @@ class Help(commands.Cog):
                 inline=True
             )
             embed.add_field(name='<:osu:837390866192007218> osu!', value='`osu`\n`setprofile`', inline=True)
-            embed.add_field(name='🎴 Karuta', value='`stats`\n`serverdropadd`\n`serverdropremove`', inline=True)
+            embed.add_field(name='🎴 Karuta', value='`stats`, `calcmode`\n`serverdropadd`, `serverdropremove`', inline=True)
             embed.add_field(name='💮 Misc.', value='`pfp`, `flip`, `roll`\n`invite`, `support`', inline=True)
             await ctx.send(embed=embed)
 
