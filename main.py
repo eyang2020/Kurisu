@@ -37,6 +37,7 @@ cdDict = {
     'flip': [],
     'roll': [],
     'invite': [],
+    'support': [],
 
     'waifu': [],
     'cry': [],
