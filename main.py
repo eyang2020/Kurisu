@@ -48,7 +48,8 @@ cdDict = {
     
     'serverdropadd': [],
     'serverdropremove': [],
-    'stats': []
+    'stats': [],
+    'calcmode': []
 }
 
 # Commands
