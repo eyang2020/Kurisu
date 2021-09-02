@@ -35,5 +35,10 @@ class Misc(commands.Cog):
         x = random.randint(1, 6)
         await ctx.send(f'{ctx.message.author.mention}, the die landed on **{x}**!')
 
+    @commands.command()
+    @commands.cooldown(1, 3, commands.BucketType.user)
+    async def invite(self, ctx):
+        await ctx.send('You can invite me to your server here! https://discord.com/oauth2/authorize?client_id=821852263894089788&permissions=347200&scope=bot')
+
 def setup(client):
     client.add_cog(Misc(client))
